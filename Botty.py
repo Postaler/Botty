@@ -27,7 +27,6 @@ except Exception as e:
     availability_zone = "zone"
 
 #Initialize Dicord Client
-client = discord.Client(intents=intents)
 client = commands.Bot(command_prefix="!", intents=intents)
 
 #Define command to respond to "ping"
@@ -82,5 +81,8 @@ async def on_message(message):
         elif user_message.lower() == "tell me about my server":
             await message.channel.send(f'Your EC2 region is {region}, Your public ip is {ip_address}, Your availbility zone is {availability_zone} ')
             return
+
+    await client.process_commands(message)
+
 
 client.run(token)

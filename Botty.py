@@ -67,7 +67,7 @@ async def on_message(message):
             return
          
         elif user_message.lower() == "tell me a joke": 
-            jokes = ["Why don't skeletons fight each other? They don't have the guts!","Why don't eggs tell jokes? They might crack up!","How does a penguin build its house? Igloos it together!"] 
+            jokes = ["Why don't skeletons fight each other? They don't have the guts!!","Why don't eggs tell jokes? They might crack up!","How does a penguin build its house? Igloos it together!"] 
             await message.channel.send(random.choice(jokes))
             return
         
